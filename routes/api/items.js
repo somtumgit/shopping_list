@@ -14,6 +14,10 @@ router.get('/', (req,res) => {
         .then(items => {
             res.json(items)
         })
+        .catch(err => {
+            res.json(err.message)
+            //res.json("123")
+        })
 })
 
 // @route   Post api/items  http://localhost:5000/api/items
