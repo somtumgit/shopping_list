@@ -15,7 +15,10 @@ router.get('/', (req,res) => {
             res.json(items)
         })
         .catch(err => {
-            res.json(err.message)
+            res.json({
+                error: err.message,
+                items: item
+            })
             //res.json("123")
         })
 })
