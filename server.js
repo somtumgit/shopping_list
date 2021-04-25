@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/url', function(req, res) {
-    app.use(bodyParser.urlencoded({extended: true}));
+    //app.use(bodyParser.urlencoded({extended: true}));
     const url = req.body.url;
 
     res.send(url);
