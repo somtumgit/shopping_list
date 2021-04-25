@@ -11,7 +11,9 @@ const Item = require('../../models/item')
 router.get('/', (req,res) => {
     Item.find()
         .sort({date: -1})
-        .then(items => res.json(items))
+        .then(items => {
+            res.json(items)
+        })
 })
 
 // @route   Post api/items  http://localhost:5000/api/items
