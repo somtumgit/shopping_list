@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/employee.css">
+        <title>{{title}}</title>
+    {% endblock %}
+    
+</head>
+<body>
+
+
+
+<div class="container">    
+    <div id="loginbox" style="margin:50px auto 50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        {% if(msg.success != '') %}
+        <div class="alert alert-success" role="alert">
+            <b>Success: </b> {{msg.success}}
+        </div>
+        {% endif %}
+        {% if(msg.error != '') %}
+        <div class="alert alert-danger" role="alert">
+            {{msg.error}}
+        </div>
+        {% endif %}
+             
+        <div class="panel panel-info" style="border: 2px solid #bce8f1">
+            <div class="panel-heading" style="color: #31708f;background-color: #d9edf7;border-color: #bce8f1;padding: 10px 15px;border-bottom: 1px solid transparent;border-top-right-radius: 3px;border-top-left-radius: 3px;">
+                <div class="panel-title">{{title}}</div>
+                <!--div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div-->
+            </div>     
+
+            <div style="padding-top:30px" class="panel-body" >
+                <div style="display:none" id="login-alert" ></div>
+                <form id="uploadfile" class="form-horizontal" role="form" style="padding: 0px 16px;" action="/upload" method="post" enctype="multipart/form-data">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <label for="uploadFile" style="margin-right:16px;padding-top:6px;"><b>Upload File</b></label>
+                        <input id="uploadFile" type="file" class="form-control" name="uploadFile" value="" placeholder="Upload your file">
+                    </div>
+                        
+
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+
+                        <div class="col-sm-12 controls" style="padding: 0px;">
+                            <input type="submit" class="btn btn-primary" style="display:block;width:100%;" value="Upload">
+                        </div>
+                    </div>
+         
+                </form>     
+
+
+            </div>                     
+        </div>  
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row">
+    {% if(records.length > 0) %}
+        {% for row in records %}
+        <div class="col-xs-12 col-sm-6 col-md-4" >
+            <image src="../uploads/{{row.imagename}}" alt="image" style="width:100%;margin-bottom:30px;">
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

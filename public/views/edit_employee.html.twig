@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/employee.css">
+        <title>{{title}}</title>
+    {% endblock %}
+    
+</head>
+<body>
+
+
+
+<div class="container">    
+    <div id="loginbox" style="margin:50px auto 50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">                    
+        <div class="panel panel-info" style="border: 2px solid #bce8f1">
+                <div class="panel-heading" style="color: #31708f;background-color: #d9edf7;border-color: #bce8f1;padding: 10px 15px;border-bottom: 1px solid transparent;border-top-right-radius: 3px;border-top-left-radius: 3px;">
+                    <div class="panel-title">{{title}}</div>
+                    <!--div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div-->
+                </div>     
+
+                <div style="padding-top:30px" class="panel-body" >
+                    <div></div>
+                    <div style="display:none" id="login-alert" ></div>
+                    <form id="loginform" class="form-horizontal" role="form" style="padding: 0px 16px;" action="/update" method="post">
+                        <input id="id" type="hidden" class="form-control" name="id" value="{{records._id}}" placeholder="">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <input id="name" type="text" class="form-control" name="name" value="{{records.name}}" placeholder="Enter your name">
+                        </div>
+                            
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <input id="email" type="email" class="form-control" name="email" value="{{records.email}}" placeholder="Email Address">
+                        </div>
+                                
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <select class="form-control" id="etype" name="etype" placeholder="Employee Type">
+                                <option value="Hourly" {% if(records.etype == "Hourly") %}selected{% endif %}>Hourly</option>
+                                <option value="Fixed" {% if(records.etype == "Fixed") %}selected{% endif %}>Fixed</option>
+                            </select>
+                        </div>
+                            
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <input id="hourRate" type="text" class="form-control" name="hourRate" value="{{records.hourlyrate}}" placeholder="Enter Hour Rate">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <input id="totalHour" type="text" class="form-control" name="totalHour" value="{{records.totalHour}}" placeholder="Enter Total Hour">
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls" style="padding: 0px;">
+                                <input type="submit" class="btn btn-primary" style="display:block;width:100%;" value="Update">
+                            </div>
+                        </div>
+
+
+                             
+                    </form>     
+
+
+
+                    </div>                     
+                </div>  
+    </div>
+    
+</div>
+
+{%- include 'footer.html.twig' %}
+
+</body>
+</html>

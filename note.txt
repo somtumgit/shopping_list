@@ -1,0 +1,153 @@
+https://www.youtube.com/watch?v=9tn82yBrX90&list=PLUVqY59GNZQMcLXlrBo4T557kWjbKHMLS
+
+https://www.tutorialswebsite.com/
+
+
+npm install --save multer
+npm install jsonwebtoken
+npm install node-localstorage
+npm install bcryptjs
+npm install express-validator
+npm install --save ckeditor
+
+
+#05 Node.js Tutorials for beginners in hindi | Global Objects in node js| Part-4
+globalObjects.js
+
+#06 Node.js Tutorials for beginners in hindi | Prototype | Part-6
+prototype.js
+
+#07 Node.js Tutorials for beginners in hindi | Module in node.js | Part-7
+module.js
+dateThaiModule.js
+calculus.js
+
+#09 Node.js Tutorials for beginners in hindi | node.js http module | Part-8
+httpModule01.js
+
+
+
+#10 Node.js Tutorials for beginners in hindi | File System Module in node.js | Part-10
+filesystem.js
+
+#13 Node.js Tutorials for beginners in hindi | Create and Trigger Custom Event in Node.js | Part-12
+event.js
+
+#15 Node.js Tutorials for beginners in hindi | What is express js? | How to install express? | Part-14
+express01.js
+
+#23 Node.js Tutorials for beginners in hindi | Use of Different Template Engine in node.js | Part-22
+#24 How to handle get and parse post request in express.js | body parsing middleware | Part-23
+express01.js
+about.html.twig
+calculator.html.twig
+index.html.twig
+login.html.twig
+
+npm install 
+npm install body-parser
+npm install twig --save
+
+
+#25 Form validation using express validator in express.js | use of express-validator package | Part-24
+
+npm install --save express-validator
+
+#26 Mongodb tutorials for beginners in hindi | mongoose Introduction | How to use mongoose with node.js
+mongoose01.js
+
+
+$ mongo
+$ show dbs
+$ use test
+$ show collections
+$ db.createCollection('inventory')
+$ use inventory
+$ db.inventory.insertOne(
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } })
+$ db.inventory.find( { item: "canvas" } )
+$ db.inventory.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
+   { item: "mat", qty: 85, tags: ["gray"], size: { h: 27.9, w: 35.5, uom: "cm" } },
+   { item: "mousepad", qty: 25, tags: ["gel", "blue"], size: { h: 19, w: 22.85, uom: "cm" } }])
+$ db.inventory.find( { "_id" : ObjectId("608b9dc73b23fee259045830") } ).pretty()
+
+
+#39 Node js Tutorials for beginners in Hindi | Display Database Records using EJS View Engine
+#40 Node js Tutorials for beginners in Hindi | Insert Records into Mongodb Database Using HTML Form
+#41,#42,#43,#44,#45,#46
+routes/api/employee.js
+server02.js
+public/views/employee.html.twig
+public/views/edit_employee.html.twig
+
+//สำหรับ upload file
+npm install --save multer
+
+
+#47 Stateless Authentication With JSON Web Tokens, Node-localstorage and Express
+
+jsonwebtoken (jwt)
+npm install jsonwebtoken
+
+node-localstorage
+npm install node-localstorage
+
+
+#48 Mini Project for Beginners using Node js, Express js and Mongoose in Hindi | Project Introduction
+#49,#50,#51,#55,#56,#57,#58,#59,#60,#61,#62
+server03.js
+routes/api/login.js
+modules/passwordCategory.js
+modules/password.js
+loginForm.html.twig
+register.html.twig
+passwordCategory.html.twig
+addPasswordCategory.html.twig
+editPasswordCategory.html.twig
+password.html.twig
+addPassword.html.twig
+dashboard.html.twig
+editPassword.html.twig
+
+npm install bcryptjs
+npm install express-validator
+npm install --save ckeditor
+npm install mongoose-paginate-v2
+
+
+#64 Mini Project for Beginners using Express and Mongoose in Hindi | Lookup | Mini Project Part-13
+เป็นการ join 2 ตาราง
+
+routes/api/login.js แก้ไข 
+
+router.get('/join', checkLoginUser, function(req,res,next) {
+
+    passModel.aggregate([
+        {
+          $lookup:
+            {
+              from: "passwordcategories",
+              localField: "passwordCategory",
+              foreignField: "passwordCategory",
+              as: "password_category "
+            }
+       }
+    ]).exec(function(err,data) {
+        if(err) throw err;
+        res.send(data);
+    });
+    
+});
+
+
+#65 How to Deploy Node js Code on Live Server | Now Project is Live | FInally Mini Project Live
+
+git init
+git add -A
+git commit -m -f "first commit"
+git remote add origin https://github.com/somtumgit/pms.git
+git push -u -f origin master
+
+
+

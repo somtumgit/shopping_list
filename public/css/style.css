@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+table {
+    margin-top: 30px;
+    
+}
+#cke_editor {
+    width: 100%;
+}

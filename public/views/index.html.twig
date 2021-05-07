@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h3>{{message}}</h3>
+    <form action="" method="post">
+        {% if(error.username) %}
+        <p style="display:inline-block;color:#721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: .75rem 1.25rem;margin-bottom: 0rem;border: 1px solid transparent;border-radius: .25rem;margin-top: 0rem;">{{error.username.msg}}</p><br>
+        {% endif %}
+        {% if(error.password) %}
+        <p style="display:inline-block;color:#721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: .75rem 1.25rem;margin-bottom: 0rem;border: 1px solid transparent;border-radius: .25rem;margin-top: 0rem;">{{error.password.msg}}</p><br>
+        {% endif %}
+        {% if(error.cpassword) %}
+        <p style="display:inline-block;color:#721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: .75rem 1.25rem;margin-bottom: 0rem;border: 1px solid transparent;border-radius: .25rem;margin-top: 0rem;">{{error.cpassword.msg}}</p><br>
+        {% endif %}
+        <input type="text" name="username" value="{{username}}"><br>
+        <input type="text" name="password" value="{{password}}"><br>
+        <input type="text" name="cpassword" value="{{cpassword}}"><br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>

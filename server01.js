@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require("fs");
 
 const app = express();
-const port = process.env.PORT || 5000;;
+const port = process.env.PORT || 5000;
 
 const PUBLIC_PATH = path.resolve(__dirname, "client", "build");
 const PUBLIC_URL = process.env.PUBLIC_URL || `http://localhost:${port}`;

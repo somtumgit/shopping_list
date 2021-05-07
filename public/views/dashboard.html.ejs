@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title><%=title%></title>
+
+    
+</head>
+<body>
+
+<%- include('header.html.ejs') %>
+
+<div class="container">
+
+    <h1><%=pageTitle%></h1>
+    <% if(msg.success != '') { %>
+    <div class="alert alert-success" role="alert">
+        <b>Success: </b> <%=msg.success%>
+    </div>
+    <% } else if(msg.error != '') { %>
+    <div class="alert alert-danger" role="alert">
+        <%=msg.error%>
+    </div>
+    <% } %>
+    <div class="count-box" style="border: 5px solid #00B0F5;display:inline-block;width:320px;height: 100px;vertical-align: top;margin: 16px 0;">
+        <div class="icon-box" style="display:inline-block;width:30%;height: 100%;background-color: #00B0F5;color: #ffffff;">
+            <i class="far fa-list-alt" style="display: block;text-align: center;font-size: 50px;line-height: 90px;"></i>
+        </div>
+        <div class="content" style="display:inline-block;width: 65%;vertical-align: top;padding-left: 10px;">
+            <div><b>Total Password Category</b></div>
+            <div class="count" style="text-align: center;font-size: 35px;"><b><%= records1.length %></b></div>
+        </div>
+    </div>
+    <div class="count-box" style="border: 5px solid #FF9800;display:inline-block;width:320px;height: 100px;vertical-align: top;margin: 16px 0;">
+        <div class="icon-box" style="display:inline-block;width:30%;height: 100%;background-color: #FF9800;color: #ffffff;">
+            <i class="fas fa-key" style="display: block;text-align: center;font-size: 50px;line-height: 90px;"></i>
+        </div>
+        <div class="content" style="display:inline-block;width: 65%;vertical-align: top;padding-left: 10px;">
+            <div><b>Total Password</b></div>
+            <div class="count" style="text-align: center;font-size: 35px;"><b><%= records2.length %></b></div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.html.ejs') %>
+
+<script src="/js/bootstrap/jquery-1.9.1.min.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>
